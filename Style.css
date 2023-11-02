@@ -1,0 +1,111 @@
+* {
+  font-family: Zen Maru Gothic, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.item {
+  width: 60%;
+  height: 150px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 20px 30px #c3c3c3;
+}
+.icons {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  padding: 0 20px;
+}
+.Icon {
+  margin-bottom: 10px;
+}
+.artcover {
+  width: auto;
+  height: 140%;
+  border-radius: 10px;
+  align-content: center;
+  box-shadow: 0px 10px 10px #c3c3c3;
+  align-self: center;
+}
+.Music-container {
+  display: flex;
+}
+.song-meta {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.song-info {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.progress-bar {
+  /*width: 100%;
+  height: 2px;
+  background-color: #000;*/
+  border-top: 3px solid #000;
+  margin-top: 25px;
+  border-width: 50%;
+}
+.Song-name {
+  margin: 5px 0px;
+}
+.singer-name {
+  margin: 5px 0px;
+}
+
+.start-time {
+  /*display: inline;
+  float: left;*/
+  margin: 5px 0px;
+  font-size: 0.9em;
+}
+.end-time {
+  /* display: inline;
+  float: right;*/
+  margin: 5px 0px;
+  font-size: 0.9em;
+  justify-self: end;
+}
+
+.controller {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  align-content: center;
+  align-items: center;
+  padding: 0px 100px;
+}
+
+.song-else {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.control {
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+}
+input[type="file"] {
+  display: none;
+}
+label {
+  text-align: center;
+}
+label:hover {
+  border-radius: 50px;
+  cursor: pointer;
+  opacity: 70%;
+}
+audio {
+  display: none;
+}
