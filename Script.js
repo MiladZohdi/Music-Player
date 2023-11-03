@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       onSuccess: function (tag) {
         audioPlayer.pause();
         document.getElementById("play-btn").src = "/img/play.svg";
+        document.getElementById("progress").style.width = 0 + "%";
 
         // Array buffer to base64
         const data = tag.tags.picture.data;
@@ -30,7 +31,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const audioPlayer = document.getElementById("player");
     audioPlayer.src = URL.createObjectURL(song);
     // ----------------------------------------------------------
+    const progressBar = document.getElementById("progress-bar");
+    const progress = document.getElementById("progress");
 
+    progressBar.addEventListener("click", seek);
+
+    function seek(e) {
+      const rect = progressBar.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const progressBarWidth = progressBar.offsetWidth;
+      const seekTime = (clickX / progressBarWidth) * audioPlayer.duration;
+      audioPlayer.currentTime = seekTime;
+    }
     // ------------------------------------------------------------------
     document.querySelector("#play-btn").addEventListener("click", function () {
       if (play == " " || play == false) {
@@ -53,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
     audioPlayer.addEventListener("timeupdate", function () {
       // Get the current time of the audio in seconds
       var currentTime = audioPlayer.currentTime;
+      const value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      progress.style.width = value + "%";
 
       // Convert the current time from seconds to a human-readable format (HH:MM:SS)
       var minutes = Math.floor(currentTime / 60);
@@ -77,3 +91,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+adaw;

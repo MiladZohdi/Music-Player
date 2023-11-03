@@ -1,0 +1,47 @@
+class Musicplayer {
+  constructor(item1) {
+    this.song = item1;
+  }
+
+  ReturnMusicata() {
+    jsmediatags.read(song, {
+      onSuccess: function (tag) {
+        const song = event.target.files[0];
+        // Array buffer to base64
+        const data = tag.tags.picture.data;
+
+        const format = tag.tags.picture.format;
+        let base64String = "";
+        for (let i = 0; i < data.length; i++) {
+          base64String += String.fromCharCode(data[i]);
+        }
+        return tag.tags.title, tag.tags.artist;
+      },
+      onError: function (error) {
+        console.log(error);
+      },
+    });
+  }
+
+  method2() {}
+}
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("input").addEventListener("change", (event) => {});
+});
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.querySelector("input").addEventListener("change", (event) => {
+//     const song = event.target.files[0];
+//     let play = " ";
+
+//         // Output the metadata
+//         document.querySelector(
+//           ".artcover"
+//         ).src = `data:${format};base64,${window.btoa(base64String)}`;
+//         document.querySelector(".Song-name").textContent =
+//         document.querySelector(".singer-name").textContent = ;
+//       },
+
+//     });
+//   });
+// });

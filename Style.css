@@ -49,12 +49,14 @@
   grid-template-columns: 1fr;
 }
 .progress-bar {
-  /*width: 100%;
-  height: 2px;
-  background-color: #000;*/
-  border-top: 3px solid #000;
+  width: 100%;
+  height: 3px;
+  background-color: #edf1f4;
   margin-top: 25px;
   border-width: 50%;
+}
+.progress-bar:hover {
+  cursor: pointer;
 }
 .Song-name {
   margin: 5px 0px;
@@ -108,4 +110,9 @@ label:hover {
 }
 audio {
   display: none;
+}
+.progress {
+  background-color: #000000;
+  height: 100%;
+  width: 0;
 }
