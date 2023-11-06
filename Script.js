@@ -63,12 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     audioPlayer.addEventListener("timeupdate", function () {
-      // Get the current time of the audio in seconds
       var currentTime = audioPlayer.currentTime;
       const value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
       progress.style.width = value + "%";
-
-      // Convert the current time from seconds to a human-readable format (HH:MM:SS)
       var minutes = Math.floor(currentTime / 60);
       var seconds = Math.floor(currentTime % 60);
       document.getElementById("start-time").innerText =
